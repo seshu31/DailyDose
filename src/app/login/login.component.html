@@ -1,0 +1,33 @@
+<div class="login-container">
+  <div class="login-card">
+    <div class="login-options-holder">
+      <div class="login-option" [ngClass]="selectedOption=== 'login' ? 'selected-option' : ''"
+        (click)="changeSelection('login')">Login</div>
+      <div class="login-option" [ngClass]="selectedOption=== 'register' ? 'selected-option' : ''"
+        (click)="changeSelection('register')">Register</div>
+    </div>
+    <div class="content-area" *ngIf="selectedOption === 'login'">
+      <p class="label-text">Email</p>
+      <input class="input-field" />
+      <p class="label-text">Password</p>
+      <input class="input-field" />
+      <div class="action-button">Login</div>
+    </div>
+    <div class="content-area" *ngIf="selectedOption === 'register'">
+      <p class="label-text">Username</p>
+      <input class="input-field" />
+      <p class="label-text">Email</p>
+      <input class="input-field" />
+      <p class="label-text">Password</p>
+      <input class="input-field" />
+      <p class="label-text">Confirm Password</p>
+      <input class="input-field" />
+      <p class="label-text">User type</p>
+      <select class="user-select-input" name="type" id="type">
+        <option class="select-option" value="volvo">Trainee</option>
+        <option class="select-option" value="saab">Saab</option>
+      </select>
+      <div class="action-button">Signup</div>
+    </div>
+  </div>
+</div>
